@@ -35,7 +35,7 @@ The application includes:
   - API requests
   - Logout events
 
-All activity is recorded in `logs/app.log` for analysis.
+All activity is recorded in [Log Data File](/logs/app.log) for analysis.
 
 ---
 

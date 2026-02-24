@@ -259,8 +259,9 @@ This layer simulates SOC-level monitoring.
 ---
 
 ## Data Flow
-
+```
 User Action → Web App → Logging Module → Log File → Analysis Script → Detection Rules → Alert / Report
+```
 
 ---
 
