@@ -190,7 +190,7 @@ It captures:
 - Action performed
 
 Logs are automatically written to:
-![Log File](logs/app.log)
+**log/app.log**
 
 This layer ensures every important event inside the system is recorded.
 
