@@ -141,7 +141,7 @@ This simulates SOC-level monitoring inside a controlled environment.
 Security-Monitoring-App/
 │
 ├── app/
-│ ├── init.py
+│ ├── __init__.py
 │ ├── auth.py
 │ ├── config.py
 │ ├── logger.py
