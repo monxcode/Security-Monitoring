@@ -1,3 +1,7 @@
-// static/js/script.js
-// Placeholder for any future client-side functionality
-console.log('Security Monitoring App loaded');
+function checkStatus() {
+    fetch('/api/status')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('api-response').innerText = "API Response: " + JSON.stringify(data);
+        });
+}

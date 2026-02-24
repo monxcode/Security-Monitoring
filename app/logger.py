@@ -1,41 +1,26 @@
-# app/logger.py
 import logging
 import json
-from flask import has_request_context, request
+import os
 from datetime import datetime
+from pythonjsonlogger import jsonlogger
+from flask import request, session
 
-class StructuredFormatter(logging.Formatter):
-    def format(self, record):
-        log_obj = {
-            'timestamp': datetime.utcnow().isoformat() + 'Z',
-            'level': record.levelname,
-            'action': getattr(record, 'action', 'UNKNOWN'),
-            'username': getattr(record, 'username', 'anonymous'),
-            'ip': getattr(record, 'ip', '0.0.0.0'),
-            'message': record.getMessage()
-        }
-        if has_request_context():
-            log_obj['ip'] = request.remote_addr
-            if hasattr(request, 'user') and request.user:
-                log_obj['username'] = request.user
-        return json.dumps(log_obj)
+class CustomJsonFormatter(jsonlogger.JsonFormatter):
+    def add_fields(self, log_record, record, message_dict):
+        super(CustomJsonFormatter, self).add_fields(log_record, record, message_dict)
+        log_record['timestamp'] = datetime.utcnow().isoformat()
+        log_record['ip_address'] = request.remote_addr if request else 'N/A'
+        log_record['username'] = session.get('_user_id', 'anonymous')
+        if not log_record.get('action'):
+            log_record['action'] = record.getMessage()
 
 def setup_logger(app):
-    handler = logging.FileHandler('logs/app.log')
-    handler.setFormatter(StructuredFormatter())
+    if not os.path.exists('logs'):
+        os.makedirs('logs')
+    
+    handler = logging.FileHandler(app.config['LOG_FILE_PATH'])
+    formatter = CustomJsonFormatter('%(timestamp)s %(ip_address)s %(username)s %(action)s')
+    handler.setFormatter(formatter)
+    
     app.logger.addHandler(handler)
     app.logger.setLevel(logging.INFO)
-    # Replace Flask's default logger
-    app.logger.handlers = [handler]
-
-def log_action(action, username=None, **kwargs):
-    from flask import has_request_context, request
-    from flask import current_app
-    extra = {'action': action}
-    if username:
-        extra['username'] = username
-    if has_request_context():
-        extra['ip'] = request.remote_addr
-        if not username and hasattr(session, 'username'):
-            extra['username'] = session.get('username', 'anonymous')
-    current_app.logger.info(f"Action: {action}", extra=extra)

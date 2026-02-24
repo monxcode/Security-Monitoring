@@ -1,15 +1,26 @@
-<!-- templates/layout.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Security Monitoring</title>
+    <title>Security Monitor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body>
-    <div class="container">
+    <nav>
+        <strong>SEC-MON v1.0</strong>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('routes.dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}<p class="flash">{{ message }}</p>{% endfor %}
+          {% endif %}
+        {% endwith %}
         {% block content %}{% endblock %}
-    </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
