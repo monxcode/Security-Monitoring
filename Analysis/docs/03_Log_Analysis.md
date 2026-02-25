@@ -5,7 +5,7 @@
 The purpose of log analysis is to examine system-generated logs and identify normal vs suspicious behavior based on activity patterns.
 
 The logs used for analysis are stored in:
-[Log Data](/logs/app.log)
+[logs/app.log](/logs/app.log)
 
 These logs are generated automatically by the web application.
 
