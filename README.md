@@ -141,12 +141,12 @@ This simulates SOC-level monitoring inside a controlled environment.
 Security-Monitoring/
 │
 ├── app/
-│ ├── __init__.py
-│ ├── auth.py
-│ ├── config.py
-│ ├── logger.py
-│ ├── models.py
-│ └── routes.py
+│   ├── __init__.py
+│   ├── auth.py
+│   ├── config.py
+│   ├── logger.py
+│   ├── models.py
+│   └── routes.py
 │
 ├── static/
 │   ├── css/
