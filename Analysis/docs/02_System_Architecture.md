@@ -245,7 +245,7 @@ Logs store:
 ### 4. Analysis Layer
 
 The analysis module processes:
-logs/app.log
+[logs/app.log](/logs/app.log)
 
 It performs:
 
