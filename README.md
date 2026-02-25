@@ -138,7 +138,7 @@ This simulates SOC-level monitoring inside a controlled environment.
 
 ## Project Folder Structure
 ```
-Security-Monitoring-App/
+Security-Monitoring/
 │
 ├── app/
 │ ├── __init__.py
@@ -149,28 +149,28 @@ Security-Monitoring-App/
 │ └── routes.py
 │
 ├── static/
-│ ├── css/
-│ │ └── style.css
-│ └── js/
-│   └── script.js
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
 │
 ├── templates/
-│ ├── layout.html
-│ ├── login.html
-│ └── dashboard.html
+│   ├── layout.html
+│   ├── login.html
+│   └── dashboard.html
 │
 ├── logs/
-│ └── app.log
+│   └── app.log
 │
 ├── analysis/
-│ └── docs/
-│ ├── 01-Project-Overview.md
-│ ├── 02-System-Architecture.md
-│ ├── 03-Log-Analysis.md
-│ ├── 04-Detection-Logic.md
-│ ├── 05-Incident-Scenarios.md
-│ ├── 06-Incident-Response.md
-│ └── 07-Future-Improvement.md
+│   └── docs/
+│       ├── 01-Project-Overview.md
+│       ├── 02-System-Architecture.md
+│       ├── 03-Log-Analysis.md
+│       ├── 04-Detection-Logic.md
+│       ├── 05-Incident-Scenarios.md
+│       ├── 06-Incident-Response.md
+│       └── 07-Future-Improvement.md
 │
 ├── requirements.txt
 ├── run.py
