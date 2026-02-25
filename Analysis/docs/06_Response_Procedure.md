@@ -55,8 +55,7 @@ Investigation includes:
 - Verifying source IP reputation
 
 Additional evidence may be collected from:
-[Log Data](/logs/app.log)
-
+[logs/app.log](/logs/app.log)
 ---
 
 ## Step 4: Response Actions
