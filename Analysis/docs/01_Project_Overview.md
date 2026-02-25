@@ -35,7 +35,7 @@ The application includes:
   - API requests
   - Logout events
 
-All activity is recorded in [Log Data File](/logs/app.log) for analysis.
+All activity is recorded in [logs/app.log](/logs/app.log) for analysis.
 
 ---
 
@@ -55,7 +55,7 @@ This approach ensures:
 ## Conclusion
 
 The project demonstrates end-to-end implementation of:
-
+```
 Application → Log Generation → Log Analysis → Detection Rules → Incident Response
-
+```
 It reflects practical cybersecurity monitoring principles used in enterprise environments.
