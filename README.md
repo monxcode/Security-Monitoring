@@ -112,7 +112,7 @@ It captures:
 - Action performed
 
 Logs are stored in:
-`logs/app.log`
+[logs/app.log](/logs/app.log)
 
 ---
 
@@ -221,10 +221,7 @@ Log analysis is performed to examine system-generated logs and detect abnormal b
 
 Logs are stored in:
 
-```
-logs/app.log
-```
-
+[logs/app.log](/logs/app.log)
 ---
 
 ### Log Format Example
@@ -270,9 +267,7 @@ Detection rules define security thresholds used to identify abnormal or suspicio
 
 These rules are applied on:
 
-```
-logs/app.log
-```
+[logs/app.log](/logs/app.log)
 
 ---
 
@@ -485,9 +480,7 @@ Investigation includes:
 
 Evidence is collected from:
 
-```
-logs/app.log
-```
+[logs/app.log](/logs/app.log)
 
 ---
 
